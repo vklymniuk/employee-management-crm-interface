@@ -11,10 +11,8 @@ function roleClaimHandler(log) {
   return (
     <div>
       <div>
-        {actionType === ACTION_TYPE.BULK_CREATED &&
-          `Added new technology: ${technology} to ${resource}`}
-        {actionType === ACTION_TYPE.BULK_DELETED &&
-          `Deleted technology: ${technology} from ${resource}`}
+        { actionType === ACTION_TYPE.BULK_CREATED && `Added new technology: ${technology} to ${resource}` }
+        { actionType === ACTION_TYPE.BULK_DELETED && `Deleted technology: ${technology} from ${resource}` }
       </div>
     </div>
   );

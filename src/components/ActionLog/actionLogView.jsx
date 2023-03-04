@@ -39,12 +39,8 @@ const ActionLogInfo = props => {
       return changes.map(field => {
         const { previous, current } = getChanges(field, oldData, newData);
 
-        const prevValue = field.toLowerCase().endsWith('date')
-          ? moment(previous).format(DATE_FORMAT.LOGS_DATE_FORMAT)
-          : previous;
-        const curentValue = field.toLowerCase().endsWith('date')
-          ? moment(current).format(DATE_FORMAT.LOGS_DATE_FORMAT)
-          : current;
+        const prevValue = field.toLowerCase().endsWith('date') ? moment(previous).format(DATE_FORMAT.LOGS_DATE_FORMAT) : previous;
+        const curentValue = field.toLowerCase().endsWith('date') ? moment(current).format(DATE_FORMAT.LOGS_DATE_FORMAT) : current;
 
         return (
           <div key={field}>
@@ -65,10 +61,13 @@ const ActionLogInfo = props => {
       actionType === ACTION_LOGS.TYPE.BULK_DELETED
     ) {
       const logHandler = customLogHandler(log);
+
       return logHandler;
     }
+
     return null;
   };
+
   return (
     <ActionLogCard>
       <Box title={renderTitle()}>
